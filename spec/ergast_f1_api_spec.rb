@@ -1,5 +1,6 @@
 RSpec.describe ErgastF1Api do
   it "has a version number" do
+    binding.pry
     expect(ErgastF1Api::VERSION).not_to be nil
   end
 

@@ -1,5 +1,10 @@
 require "bundler/setup"
 require "ergast_f1_api"
+require 'simplecov'
+require 'vcr'
+require 'yaml'
+require 'pry'
+require 'ergast_f1_api'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
