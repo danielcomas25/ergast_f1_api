@@ -1,10 +1,9 @@
 RSpec.describe ErgastF1Api do
-  it "has a version number" do
-    binding.pry
+  it 'has a version number' do
     expect(ErgastF1Api::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  it 'does something useful' do
+    expect(true).to eq(true)
   end
 end

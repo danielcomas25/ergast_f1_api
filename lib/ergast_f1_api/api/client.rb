@@ -3,7 +3,7 @@ require 'faraday'
 module ErgastF1Api
   module Api
     class Client
-      HOST = 'https://ergast.com/api/f1/'
+      HOST = 'https://ergast.com/api/f1/'.freeze
 
       def initialize(url = HOST)
         @connection = Faraday.new(url: url) do |builder|
@@ -24,15 +24,16 @@ module ErgastF1Api
         response
       end
 
+      private
+
       def error_handler(response)
-        # All response status from the server 200 is considered SUCCESS
         case response.status.to_i
         when 400..499
-          raise EgarstF1Api::ClientError, response
+          raise EgarstF1Api::Exceptions::ClientError, response
         when 500..599
-          raise EgarstF1Api::ServerError, response
+          raise EgarstF1Api::Exceptions::ServerError, response
         else
-          raise EgarstF1Api::UnknownError, response
+          raise EgarstF1Api::Exceptions::UnknownError, response
         end
       end
     end
