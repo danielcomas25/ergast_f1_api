@@ -25,6 +25,10 @@ module ErgastF1Api
         get("constructors/#{team}/drivers.json?limit=500")
       end
 
+      def by_nationality(nationality:)
+        all.select { |driver| driver.nationality == nationality.capitalize }
+      end
+
       private
 
       def get(url)
@@ -33,8 +37,8 @@ module ErgastF1Api
 
       def build_driver(response)
         JSON.parse(response.body)['MRData']['DriverTable']['Drivers'].map do |metadata|
-          ErgastF1Api::Models::Driver.new(metadata)
-        end
+          ErgastF1Api::Models::Driver.build(metadata)
+        end.compact
       end
     end
   end
