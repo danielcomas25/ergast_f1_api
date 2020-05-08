@@ -1,0 +1,16 @@
+Layout/EndOfLine:
+  EnforcedStyle: lf
+Metrics/LineLength:
+  Max: 120
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+    - 'ergast_f1_api.gemspec'
+Metrics/MethodLength:
+  Max: 15
+Metrics/ClassLength:
+  CountComments: false
+  Max: 150
+Metrics/AbcSize:
+  Max: 20
+

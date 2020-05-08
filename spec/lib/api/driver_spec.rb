@@ -2,6 +2,7 @@
 
 require 'spec_helper'
 require 'ergast_f1_api/api/client'
+require 'ergast_f1_api/api/exceptions/errors'
 
 RSpec.describe ErgastF1Api::Api::Driver do
   let(:subject) { described_class.new(client: client) }
