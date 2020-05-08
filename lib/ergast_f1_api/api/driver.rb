@@ -2,6 +2,7 @@ require 'ergast_f1_api/models/driver'
 
 module ErgastF1Api
   module Api
+    # Driver consumer
     class Driver
       def initialize(client:)
         @client = client

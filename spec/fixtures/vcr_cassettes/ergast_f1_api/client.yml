@@ -1,0 +1,142 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ergast.com/api/f1/drivers.json?limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 08 May 2020 13:24:52 GMT
+      server:
+      - Apache/2.2.15 (CentOS)
+      x-powered-by:
+      - PHP/5.3.3
+      access-control-allow-origin:
+      - "*"
+      content-length:
+      - '351'
+      connection:
+      - close
+      content-type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"MRData":{"xmlns":"http:\/\/ergast.com\/mrd\/1.4","series":"f1","url":"http://ergast.com/api/f1/drivers.json","limit":"1","offset":"0","total":"848","DriverTable":{"Drivers":[{"driverId":"abate","url":"http:\/\/en.wikipedia.org\/wiki\/Carlo_Mario_Abate","givenName":"Carlo","familyName":"Abate","dateOfBirth":"1932-07-10","nationality":"Italian"}]}}}'
+    http_version: null
+  recorded_at: Fri, 08 May 2020 12:42:30 GMT
+- request:
+    method: get
+    uri: https://ergast.com/api/f1/drivrs.json?limit=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      date:
+      - Fri, 08 May 2020 13:38:49 GMT
+      server:
+      - Apache/2.2.15 (CentOS)
+      x-powered-by:
+      - PHP/5.3.3
+      content-length:
+      - '111'
+      connection:
+      - close
+      content-type:
+      - text/html; charset=UTF-8
+    body:
+      encoding: UTF-8
+      string: "<html>\r\n  <head>\r\n    <title>Error</title>\r\n  </head>\r\n  <body>\r\n
+        \   <h3>Bad Request</h3>\r\n  </body>\r\n</html>\r\n"
+    http_version: null
+  recorded_at: Fri, 08 May 2020 12:56:27 GMT
+- request:
+    method: get
+    uri: https://ergast.com/api/f1/drivers.json?limit=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 500
+      message: Server Problem
+    headers:
+      date:
+      - Fri, 08 May 2020 14:04:19 GMT
+      server:
+      - Apache/2.2.15 (CentOS)
+      x-powered-by:
+      - PHP/5.3.3
+      access-control-allow-origin:
+      - "*"
+      content-length:
+      - '531'
+      connection:
+      - close
+      content-type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: 'Server Problem'
+    http_version: null
+  recorded_at: Fri, 08 May 2020 13:21:57 GMT
+- request:
+    method: get
+    uri: https://ergast.com/api/f1/drivers.json?limit=3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Content-Type:
+      - application/json
+  response:
+    status:
+      code: 100
+      message: Problem
+    headers:
+      date:
+      - Fri, 08 May 2020 14:04:19 GMT
+      server:
+      - Apache/2.2.15 (CentOS)
+      x-powered-by:
+      - PHP/5.3.3
+      access-control-allow-origin:
+      - "*"
+      content-length:
+      - '531'
+      connection:
+      - close
+      content-type:
+      - application/json; charset=utf-8
+    body:
+      encoding: UTF-8
+      string: 'Problem'
+    http_version: null
+  recorded_at: Fri, 08 May 2020 13:22:51 GMT
+recorded_with: VCR 5.1.0

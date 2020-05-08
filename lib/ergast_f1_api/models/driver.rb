@@ -1,5 +1,6 @@
 module ErgastF1Api
   module Models
+    # Driver model
     class Driver
       def initialize(params)
         @driver_id = params['driverId']

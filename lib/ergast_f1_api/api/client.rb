@@ -2,6 +2,7 @@ require 'faraday'
 
 module ErgastF1Api
   module Api
+    # Client for the api
     class Client
       HOST = 'https://ergast.com/api/f1/'.freeze
 
@@ -20,20 +21,20 @@ module ErgastF1Api
           req.url params[:url]
           req.headers['Content-Type'] = 'application/json'
         end
-        error_handler(response) unless response.status.to_i.between?(200, 299)
+        error_handler(response.to_hash) unless response.status.to_i.between?(200, 299)
         response
       end
 
       private
 
       def error_handler(response)
-        case response.status.to_i
+        case response[:status].to_i
         when 400..499
-          raise EgarstF1Api::Exceptions::ClientError, response
+          raise ErgastF1Api::Api::Exceptions::ClientError, response
         when 500..599
-          raise EgarstF1Api::Exceptions::ServerError, response
+          raise ErgastF1Api::Api::Exceptions::ServerError, response
         else
-          raise EgarstF1Api::Exceptions::UnknownError, response
+          raise ErgastF1Api::Api::Exceptions::UnknownError, response
         end
       end
     end
