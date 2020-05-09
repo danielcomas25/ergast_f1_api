@@ -12,7 +12,6 @@ module ErgastF1Api
           builder.request :url_encoded
           builder.adapter :net_http
           builder.options.timeout = 1900
-          # builder.response :logger , Faraday::Logger.new(STDOUT), bodies: true
         end
       end
 

@@ -12,6 +12,10 @@ module ErgastF1Api
         get('constructors.json?limit=1000')
       end
 
+      def current
+        get('current/constructors.json?limit=30')
+      end
+
       def by_id(id:)
         get("constructors/#{id}.json")
       end
@@ -27,10 +31,10 @@ module ErgastF1Api
       private
 
       def get(url)
-        build_driver(@client.get(url: url))
+        build_constructor(@client.get(url: url))
       end
 
-      def build_driver(response)
+      def build_constructor(response)
         JSON.parse(response.body)['MRData']['ConstructorTable']['Constructors'].map do |metadata|
           ErgastF1Api::Models::Constructor.build(metadata)
         end.compact

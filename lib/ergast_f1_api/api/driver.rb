@@ -12,6 +12,10 @@ module ErgastF1Api
         get('drivers.json?limit=1000')
       end
 
+      def current
+        get('current/drivers.json?limit=30')
+      end
+
       def by_id(id:)
         get("drivers/#{id}.json")
       end

@@ -1,6 +1,6 @@
 module ErgastF1Api
   module Models
-    # Driver model
+    # Constructor model
     class Constructor
       attr_reader :nationality, :id
 
