@@ -12,12 +12,20 @@ module ErgastF1Api
         get('current/driverStandings.json')
       end
 
+      def by_driver(id:)
+        get("drivers/#{id}/driverStandings.json")
+      end
+
       def by_year(year:)
         get("#{year}/driverStandings.json")
       end
 
       def by_round(round:, year: 'current')
         get("#{year}/#{round}/driverStandings.json")
+      end
+
+      def by_position(position:)
+        get("driverStandings/#{position}.json")
       end
 
       private

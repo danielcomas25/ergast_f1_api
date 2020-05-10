@@ -1,4 +1,5 @@
 require 'ergast_f1_api/models/standings'
+require 'ergast_f1_api/models/driver_standings'
 
 module ErgastF1Api
   module Models

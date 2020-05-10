@@ -1,11 +1,15 @@
 require 'ergast_f1_api/models/driver'
+require 'ergast_f1_api/api/driver_standings'
 
 module ErgastF1Api
   module Api
     # Driver consumer
     class Driver
+      attr_reader :standings
+
       def initialize(client:)
         @client = client
+        @standings = DriverStandings.new(client)
       end
 
       def all
